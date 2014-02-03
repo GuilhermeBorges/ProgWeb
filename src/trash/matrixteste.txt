@@ -15,6 +15,9 @@ function drawSquare(ctx, posY,posX){
     ctx.lineTo(posX*sizeX,posY*sizeY + sizeY);
     ctx.fill();
 }
+
+
+
 var iteX = 0;
 var iteY = 0;
 
