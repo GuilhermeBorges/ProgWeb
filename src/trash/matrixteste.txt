@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script type="application/javascript">
+            
+var sizeX = 20; 
+var sizeY = 20;
+
+    
+function drawSquare(ctx, posY,posX){
+    
+    ctx.beginPath();
+    ctx.moveTo(posX*sizeX,posY*sizeY);
+    ctx.lineTo(posX*sizeX+sizeX,posY*sizeY);
+    ctx.lineTo(posX*sizeX+sizeX,posY*sizeY + sizeY);
+    ctx.lineTo(posX*sizeX,posY*sizeY + sizeY);
+    ctx.fill();
+}
+var iteX = 0;
+var iteY = 0;
+
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  
+var matrix = [];
+    ctx.clearRect(0,0,1150,1150);
+    for(var i=0; i<9; i++) {
+        matrix[i] = new Array(9);
+    }
+    iteX++;
+    for(var i = 0;i <= 11;i++){
+        for(var j = 0;j <= 11;j++){
+    //ctx.save();
+    
+    if(i%2 != 0 && j%3 !=0)
+        matrix[i][j] = 1;
+    
+   if(iteX > 9){iteX = 0; iteY++;}
+   
+    if(matrix[i][j])
+        drawSquare(ctx,i+iteY,j+iteX);
+    
+    ctx.restore();
+        }
+    }
+  }
+        </script>
+    </head>
+    <body onload="setInterval(draw,200);">
+        <canvas id="canvas" width="1150" height="1150"></canvas>
+    </body>
+</html> 
