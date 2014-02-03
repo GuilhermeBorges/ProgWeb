@@ -1,3 +1,5 @@
+//
+
 
 function init() {
     //responsavel por inicializar o jogo com o tamanho definido
