@@ -18,6 +18,9 @@ function drawSquare(ctx, posY,posX){
 
 
 
+
+//jjjk
+
 var iteX = 0;
 var iteY = 0;
 
