@@ -10,13 +10,24 @@ function Game()
 //probably this vector should be global
 var laser = []; //Array that represents the lazers in the screen.
 var player = new Player(); //The prayer :P
-
-
+var ets = [];//All the ets
+var board = board_parameter//the board passed by the funcitions input
 /**
  * functions to create initialize the game
 */ 
 var create_screen = function(){};//create the screen based on the matrix's size.
-var create_ets = function () {};//create the ets according to the number of ets passed through the initialization.
+var create_ets = function (et_row , et_per_row) {
+	var posX = 1;//start drawing position
+	var posY = 1;//start drawing position
+
+	for (var i = 0; i < et_row; i++) {
+		ets[i] = new Array(et_per_row);
+		for (var j = 0; j < et_per_row; j++) {
+			ets[i][j] = new ET(); //creating the et in that position
+		};
+	};
+
+};//create the ets according to the number of ets passed through the initialization.
 var start_game = function () {};// create the screen, the ETs (create_ets) and the gamer.
 
 
@@ -44,7 +55,10 @@ var game_status = function(){};//Verify if all the ETs have died, if the player 
     * Moviments the objects
     * Check collisions
 */
-var loop = function(){};
+var loop = function(){
+
+
+};
 
 /**
  * class constructor
