@@ -8,7 +8,7 @@
 function Game()
 {
 //probably this vector should be global
-var laser = []; //Array that represents the lazers in the screen.
+var lasers = []; //Array that represents the lazers in the screen.
 var player = new Player(); //The prayer :P
 var ets = [];//All the ets
 var board = board_parameter//the board passed by the funcitions input
@@ -28,8 +28,8 @@ var create_ets = function (et_row , et_per_row) {
 		ets[i] = new Array(et_per_row);
 		for (var j = 0; j < et_per_row; j++) {
 			ets[i][j] = new ET(); //creating the et in that position
-		};
-	};
+		}
+	}
 
 	n_ets = et_row * et_per_row; //variable used to control the number of alive ets
 
@@ -51,7 +51,9 @@ var collisions = function(){};//See in with part of the matrix they are and veri
 */
 
 //Move functions
-var move_ets = function(){};//It is needed to verify the boarders, in order to change the xspeed direction
+
+//It is needed to verify the boarders, in order to change the xspeed direction
+var move_ets = function(){};
 var move_player = function(){};
 var move_lasers = function(){}; //For each laser in the array we will walk with then (pixel by pixel)
 var move = function(){}; //For every round, move the objects
@@ -72,7 +74,31 @@ var game_status = function(){
 
 //Update the screen, drawing everything
 var update = function(){
-	
+	//drawing the ets
+	for (var i = 0; i < ets.length; i++) {
+		for (var j = 0; j < ets[i].length; j++) {
+			if(ets[i][j].alive)
+			{
+				ets[i][j].draw();//draw the ET
+			}
+		}
+	}
+
+	//drawing the player
+	if(player.alive)
+		{
+			player.draw();
+		}
+	else
+		{
+			//player death animation
+		}
+
+	//drawing the lasers
+	for (var i = 0; i < lasers.length; i++) {
+		lasers[i].draw();
+	};
+
 };
 
 /**Function responsible, respectively, for:
@@ -105,4 +131,5 @@ var loop = function(){
 */
 
 startgame();
+
 }
