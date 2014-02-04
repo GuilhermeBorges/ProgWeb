@@ -1,0 +1,65 @@
+
+.text {
+    color: greenyellow;
+    display: inline; 
+}
+
+#head {
+    color: white;
+    border-color: green;
+    text-align: center;
+    border-style: solid;
+    width: 600px;
+    heigth: 300px;
+    margin: auto;
+    position: relative;
+    background: black;
+}
+
+.side {
+    border-style: solid;
+    border-color: green;
+    background: black;
+    width: 300px;
+    height: 600px;
+}
+
+#left{
+    clear: both;
+    float: left;
+    margin-left:40px;
+    position: relative;
+}
+
+#right{
+    float: right;
+    margin-right: 40px;
+    position:relative;
+}
+
+#center{
+    color: aqua;
+    border-style: solid;
+    border-color: green;
+    width: 800px;
+    height: 800px;
+    background: black;
+    /*float: inside;*/
+    margin: auto;
+    position: relative;
+}
+img {
+    width: 100;
+    height: 100;
+    display: block;
+    margin: 10px;
+    
+}
+#center h2{
+    text-align: center;
+    color:greenyellow;
+}
+body {
+    background: black;
+
+}
