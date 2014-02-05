@@ -14,7 +14,8 @@ function init() {
 //    ete.draw();
     var g = new Game(2, 3, 5);
     g.start_game();
-    setInterval(g.loop,200);
+//    g.loop()
+//    setInterval(g.loop(),200);
     //responsavel por inicializar o jogo com o tamanho definido
 //
 //    var board = []; // matrix creates the board game. This matrix cover the entire screen
